@@ -14,6 +14,22 @@ public class Triangle2D {
         }
     }
 
+    public boolean estIsocele(){
+        Segment2D s1 = new Segment2D(point1, point2);
+        Segment2D s2 = new Segment2D(point1, point3);
+        Segment2D s3 = new Segment2D(point2, point3);
+
+        return s1.equals(s2) || s2.equals(s3) || s3.equals(s1);
+    }
+
+    public boolean estEquilateral(){
+        Segment2D s1 = new Segment2D(point1, point2);
+        Segment2D s2 = new Segment2D(point1, point3);
+        Segment2D s3 = new Segment2D(point2, point3);
+
+        return s1.equals(s2) && s2.equals(s3);
+    }
+
 
 
     public Point2D getPoint1() {
