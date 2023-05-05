@@ -40,7 +40,7 @@ public class Triangle2D {
         return l1==l2 && l2==l3;
     }
 
-    public boolean estRectanble(){
+    public boolean estRectangle(){
         Segment2D s1 = new Segment2D(point1, point2);
         Segment2D s2 = new Segment2D(point1, point3);
         Segment2D s3 = new Segment2D(point2, point3);
