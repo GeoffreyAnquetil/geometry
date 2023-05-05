@@ -15,6 +15,17 @@ public class Segment2D {
         return point1.toString() + " | " + point2.toString();
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Segment2D segment2D = (Segment2D) o;
+
+        if(! (point1.equals(segment2D.point1) || (point1.equals(segment2D.point2)))) return false;
+        else return (point2.equals(segment2D.point2) || point2.equals(segment2D.point1));
+    }
+
     public Point2D getPoint1() {
         return point1;
     }
