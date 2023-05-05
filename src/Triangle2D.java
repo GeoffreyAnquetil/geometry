@@ -1,3 +1,5 @@
+import static java.lang.Math.pow;
+
 public class Triangle2D {
     private Point2D point1;
     private Point2D point2;
@@ -19,7 +21,11 @@ public class Triangle2D {
         Segment2D s2 = new Segment2D(point1, point3);
         Segment2D s3 = new Segment2D(point2, point3);
 
-        return s1.equals(s2) || s2.equals(s3) || s3.equals(s1);
+        double l1 = s1.norme();
+        double l2 = s2.norme();
+        double l3 = s3.norme();
+
+        return l1 == l2 || l2 == l3 || l3 == l1;
     }
 
     public boolean estEquilateral(){
@@ -27,10 +33,26 @@ public class Triangle2D {
         Segment2D s2 = new Segment2D(point1, point3);
         Segment2D s3 = new Segment2D(point2, point3);
 
-        return s1.equals(s2) && s2.equals(s3);
+        double l1 = s1.norme();
+        double l2 = s2.norme();
+        double l3 = s3.norme();
+
+        return l1==l2 && l2==l3;
     }
 
+    public boolean estRectanble(){
+        Segment2D s1 = new Segment2D(point1, point2);
+        Segment2D s2 = new Segment2D(point1, point3);
+        Segment2D s3 = new Segment2D(point2, point3);
 
+        double l1 = s1.norme();
+        double l2 = s2.norme();
+        double l3 = s3.norme();
+
+        if(l1>l2 && l1>l3 && (pow(l2,2) + pow(l3,2) == pow(l1,2))) return true;
+        else if(l2>l1 && l2>l3 && (pow(l1,2) + pow(l3,2) == pow(l2,2))) return true;
+        return (l3>l2 && l3>l1 && (pow(l2,2) + pow(l1,2) == pow(l3,2)));
+    }
 
     public Point2D getPoint1() {
         return point1;
