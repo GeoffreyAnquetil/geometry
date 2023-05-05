@@ -1,3 +1,5 @@
+import static java.lang.Math.pow;
+
 public class Segment2D {
     private Point2D point1;
     private Point2D point2;
@@ -10,12 +12,22 @@ public class Segment2D {
         }
     }
 
+    public double norme(){
+        float x1 = point1.getX();
+        float x2 = point2.getX();
+        float y1 = point1.getY();
+        float y2 = point2.getY();
+
+        return pow(x1-x2, 2) + pow(y1-y2, 2);
+    }
+
     @Override
     public String toString(){
         return point1.toString() + " | " + point2.toString();
     }
 
     @Override
+    //Renvoie true pour AB = AB, mais aussi pour AB = BA
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
