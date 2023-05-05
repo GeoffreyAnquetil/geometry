@@ -1,3 +1,4 @@
+import static java.lang.Math.abs;
 import static java.lang.Math.pow;
 
 public class Triangle2D {
@@ -14,6 +15,17 @@ public class Triangle2D {
             this.point2 = point2;
             this.point3 = point3;
         }
+    }
+
+    public double aire() {
+        float x1 = point1.getX();
+        float x2 = point2.getX();
+        float x3 = point3.getX();
+        float y1 = point1.getY();
+        float y2 = point2.getY();
+        float y3 = point3.getY();
+
+        return 0.5 * abs((x2 - x1) * (y3 - y1) - (x3 - x1) * (y2 - y1));
     }
 
     public boolean estIsocele(){
