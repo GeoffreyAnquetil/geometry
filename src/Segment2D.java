@@ -1,4 +1,5 @@
 import static java.lang.Math.pow;
+import static java.lang.Math.sqrt;
 
 public class Segment2D {
     private Point2D point1;
@@ -18,7 +19,7 @@ public class Segment2D {
         float y1 = point1.getY();
         float y2 = point2.getY();
 
-        return pow(x1-x2, 2) + pow(y1-y2, 2);
+        return sqrt(pow(x1-x2, 2) + pow(y1-y2, 2));
     }
 
     @Override
