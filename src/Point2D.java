@@ -9,7 +9,7 @@ public class Point2D {
 
     @Override
     public String toString(){
-        return("Point de coordonnées : ("+x+","+y+")");
+        return "("+x+","+y+")";
     }
 
     @Override

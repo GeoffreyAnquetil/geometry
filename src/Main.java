@@ -9,6 +9,8 @@ public class Main {
 
         Segment2D s1 = new Segment2D(p1, p2);
         Segment2D s2 = new Segment2D(p1, p3);
+
+        System.out.println(s2.toString());
     }
 }
 

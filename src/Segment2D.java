@@ -10,6 +10,11 @@ public class Segment2D {
         }
     }
 
+    @Override
+    public String toString(){
+        return point1.toString() + " | " + point2.toString();
+    }
+
     public Point2D getPoint1() {
         return point1;
     }
